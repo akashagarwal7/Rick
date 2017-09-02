@@ -36,8 +36,6 @@ class MyClassifier():
 					maxLength = len(strr)
 		if maxLength > 0:
 			return self.replies[maxMatch]
-		# if not match then return this:
-		# return "Sorry I don't understand that yet."
 
 	def predict(self, test):
 		predictions = []
@@ -48,29 +46,6 @@ class MyClassifier():
 
 
 import pandas
-
-# url = './chat.data'
-# names = ['content', 'reply']
-# dataset = pandas.read_csv(url, names=names).values
-
-# features = dataset[:, 0]
-# replies = dataset[:, 1]
-
-# clf = MyClassifier()
-# clf.fit(features, replies)
-# key = clf.predict(['hi how are YoU', 'BYE BYE CYA', 'lol', 'fuck whats up my man'])
-# print (key)
-
-# key = 1;
-# #TODO next step is implement randomness for message which is to be returned
-
-# maps = []
-# maps.append(Maps(0, ['Yooooo!', 'Hello!', 'Hello there!', 'What\'s up?']))
-# maps.append(Maps(1, ['Byeee!', 'See ya in another life brother!', 'Goodbye!']))
-
-# for obj in maps:
-# 	if obj.is_key(key):
-# 		print(obj.get_msg())
 
 class Morty():
 	def __init__(self):
@@ -95,7 +70,3 @@ class Morty():
 		for obj in self.maps:
 			if obj.is_key(key[0]):
 				return obj.get_msg()
-
-# x = Morty()
-# print(x.predict('hi how are you'))
-# print(x.predict('asdasd'))

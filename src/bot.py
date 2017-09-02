@@ -51,7 +51,7 @@ async def on_message(message):
 
     
     await client.send_message(message.channel, x.predict(message.content))
-    return # Don't need to execute code below this right now, it needs to be cleaned
+    return # Don't need to execute code below this right now, it needs to be cleaned and the logic needs to be changed as well
 
 
     #Hello/Farewell Messages
