@@ -9,13 +9,14 @@ class Maps():
 		return self.i == i
 
 	def get_msg(self):
-		return random.choice(self.list)
+		return random.choice(self.list) if type(self.list) is list else self.list
 
 
 class MyClassifier():
 	def fit(self, features, replies):
 		self.features = features
 		self.replies = replies
+
 
 	def find_string_in_test(self, msg):
 		# print ("Current msg: {0}".format(msg))
@@ -48,6 +49,16 @@ class MyClassifier():
 import pandas
 
 class Morty():
+	def predict(self, msg):
+		blah = []
+		blah.append(msg)
+		key = self.clf.predict(blah)
+		if key[0] is None:
+			return "Sorry I don't understand that yet."
+		for obj in self.maps:
+			if obj.is_key(key[0]):
+				return obj.get_msg()
+
 	def __init__(self):
 		url = './chat.data'
 		names = ['content', 'reply']
@@ -58,17 +69,15 @@ class Morty():
 		self.clf.fit(features, replies)
 
 		self.maps = []
+		self.maps.append(Maps(-1, [':eyes:', 'Language!', 'You don\'t have to swear!', 'Don\'t talk like that!', 'Stop that!', 'Stop swearing!']))
 		self.maps.append(Maps(0, ['Yooooo!', 'Hello!', 'Hello there!', 'What\'s up?']))
 		self.maps.append(Maps(1, ['Byeee!', 'See ya in another life brother!', 'Goodbye!']))
-		self.maps.append(Maps(-1, [':eyes:', 'Language!', 'You don\'t have to swear!', 'Don\'t talk like that!', 'Stop that!', 'Stop swearing!'])
 		self.maps.append(Maps(2, ['I\'m fine, thanks!', 'I\'m feeling great!', 'I\'m a bit bored :pensive: ', 'Everything\'s good!']))
-
-	def predict(self, msg):
-		blah = []
-		blah.append(msg)
-		key = self.clf.predict(blah)
-		if key[0] is None:
-			return "Sorry I don't understand that yet."
-		for obj in self.maps:
-			if obj.is_key(key[0]):
-				return obj.get_msg()
+		self.maps.append(Maps(100, 'What?'))
+		self.maps.append(Maps(101, 'Ok'))
+		self.maps.append(Maps(102, 'Boop'))
+		self.maps.append(Maps(103, '?'))
+		self.maps.append(Maps(104, 'I respect my privacy here.'))
+		self.maps.append(Maps(105, 'What\'s wrong?'))
+		self.maps.append(Maps(106, 'Still breathing.'))
+		self.maps.append(Maps(107, 'No, I\'m not on freaking Windows.'))
