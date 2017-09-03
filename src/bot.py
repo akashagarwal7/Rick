@@ -27,10 +27,6 @@ async def on_message(message):
     if message.author == client.user:
         return
     #Variables for Messages
-#     hi = random.choice(['Hi {0.author.mention}!'.format(message), 'Yooooo!', 'Hello!', 'Hello there!', 'What\'s up?'])
-#     bye = random.choice(['Byeee!', 'See ya in another life brother!', 'Goodbye!'])
-#     swearreply = random.choice([':eyes:', 'Language!', 'You don\'t have to swear!', 'Don\'t talk like that!', 'Stop that!', 'Stop swearing!'])
-#     fine = random.choice(['I\'m fine, thanks!', 'I\'m feeling great!', 'I\'m a bit bored :pensive: ', 'Everything\'s good!'])
 #     ball = random.choice([' Maybe..', ' Who knows?', ' For sure!', ' Seems like YES!', ' Nooo.. I don\'t think so!', ' No.'])
 #     flip = random.choice(['1', '0'])
 #     #---------CHUCK-------------------
@@ -62,27 +58,6 @@ async def on_message(message):
     
     await client.send_message(message.channel, x.predict(message.content))
     return # Don't need to execute code below this right now, it needs to be cleaned and the logic needs to be changed as well
-
-
-    #Hello/Farewell Messages
-    # if message.content.startswith('Hi'.lower()) or message.content.startswith('hi'):
-    #     await client.send_message(message.channel, hi)
-    # elif message.content.startswith('Bye') or message.content.startswith('bye'):
-    #     await client.send_message(message.channel, bye)
-    # elif message.content.startswith('What\'s up Rick?') or message.content.startswith('whats up Rick?'):
-    #     await client.send_message(message.channel, fine)
-    ##
-
-    #Swear Messages
-    # elif ('Fucking') in message.content or ('fucking') in message.content:
-    #     await client.send_message(message.channel, swearreply)
-    # elif ('Bastard') in message.content or ('bastard') in message.content:
-    #     await client.send_message(message.channel, swearreply)
-    # elif ('Fuck') in message.content or ('fuck') in message.content:
-    #     await client.send_message(message.channel, swearreply)
-    # elif ('Nigga') in message.content or ('nigga') in message.content:
-    #     await client.send_message(message.channel, swearreply)
-    ##
 
     #Misc Messages
     if message.content.startswith('help'):

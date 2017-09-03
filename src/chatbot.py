@@ -60,6 +60,8 @@ class Morty():
 		self.maps = []
 		self.maps.append(Maps(0, ['Yooooo!', 'Hello!', 'Hello there!', 'What\'s up?']))
 		self.maps.append(Maps(1, ['Byeee!', 'See ya in another life brother!', 'Goodbye!']))
+		self.maps.append(Maps(-1, [':eyes:', 'Language!', 'You don\'t have to swear!', 'Don\'t talk like that!', 'Stop that!', 'Stop swearing!'])
+		self.maps.append(Maps(2, ['I\'m fine, thanks!', 'I\'m feeling great!', 'I\'m a bit bored :pensive: ', 'Everything\'s good!']))
 
 	def predict(self, msg):
 		blah = []
