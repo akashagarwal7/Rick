@@ -49,6 +49,16 @@ async def on_message(message):
 # )
     ##
 
+    # Embed example
+    from discord import Embed
+
+    my_embed = Embed(title = 'Rock rocks', description = 'rock is a cool guy', color=0x00ff00)
+
+    if message.content.startswith('!embed'):
+        await client.send_message(message.channel, embed=my_embed)
+        return
+
+    # End of example
     
     await client.send_message(message.channel, x.predict(message.content))
     return # Don't need to execute code below this right now, it needs to be cleaned and the logic needs to be changed as well
